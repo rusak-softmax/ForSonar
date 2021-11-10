@@ -146,7 +146,7 @@ pipeline {
 stage ('Синтаксическая проверка') {
     steps {
         timestamps {
-            cmd("vrunner syntax-check --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --junitpath allure-report/plugins/junit/syntaxCheck.xml")
+            cmd("vrunner syntax-check --junitpath ./out/junit/syntaxCheck.xml --ibconnection \${testbaseConnString}\ ${admin1cUsrLine} ${admin1cPwdLine} ")
        }
    }
 }
