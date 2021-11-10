@@ -143,13 +143,13 @@ pipeline {
                 }
             }
         }
-//stage ('Синтаксическая проверка') {
-//    steps {
-//        timestamps {
- //           cmd("vrunner syntax-check --junitpath ./out/junit/syntaxCheck.xml --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} ")
- //       }
-//    }
-//}
+stage ('Синтаксическая проверка') {
+    steps {
+        timestamps {
+            cmd("vrunner syntax-check --junitpath allure-report/plugins/junit/syntaxCheck.xml --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} ")
+       }
+   }
+}
 //	stage('Sonarqube') {
 //    environment {
  //       scannerHome = tool 'SonarQubeScanner'
