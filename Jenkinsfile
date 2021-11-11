@@ -215,7 +215,7 @@ pipeline {
                         if (admin1cPwd != null && !admin1cPwd.isEmpty()) {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
-            returnCodeSyntaxCheck = utils.cmd("vrunner syntax-check --junitpath allure-report/plugins/junit/syntaxCheck.xml --ibconnection ${testbaseConnString} ${admin1cUsrLine} ${admin1cPwdLine} }")
+            returnCodeSyntaxCheck = utils.cmd("vrunner syntax-check --junitpath allure-report11/plugins/junit/syntaxCheck.xml --ibconnection ${testbaseConnString} ${admin1cUsrLine} ${admin1cPwdLine} }")
 		//if (returnCodeSyntaxCheck != 0) {
                 //            utils.raiseError("Возникла ошибка при запуске синтаксической проверки на сервере ${server1c} и базе ${testbase}")
 		//}
