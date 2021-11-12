@@ -163,7 +163,9 @@ pipeline {
 	//    node {
   stage('SCM') {
 	  steps {
+		  script {
 		  scannerHome = tool 'SonarQubeScanner'
+		  }
     checkout scm
 	  }
   }
