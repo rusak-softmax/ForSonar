@@ -158,7 +158,7 @@ pipeline {
   //  }
 //}
  
-	    node {
+	//    node {
   stage('SCM') {
     checkout scm
   }
@@ -168,7 +168,7 @@ pipeline {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-}
+//}
 	    //
         //stage("Тестирование ADD") {
           //  steps {
