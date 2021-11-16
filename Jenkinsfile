@@ -161,19 +161,19 @@ pipeline {
 //}
  
 	///////    node {
-  stage('SCM') {
-	  steps {
-		  script {
-		  scannerHome = tool 'SonarQubeScanner'
-		  }
-    checkout scm
-	  }
-  }
-  stage('SonarQube Analysis') {
-	  steps {
+ // stage('SCM') {
+//	  steps {
+//		  script {
+//		  scannerHome = tool 'SonarQubeScanner'
+//		  }
+//    checkout scm
+//	  }
+//  }
+//  stage('SonarQube Analysis') {
+//	  steps {
    ///// //def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv('SonarQube') {
-      sh "${scannerHome}/bin/sonar-scanner"
+ //   withSonarQubeEnv('SonarQube') {
+  //    sh "${scannerHome}/bin/sonar-scanner"
     }
   }
   }
