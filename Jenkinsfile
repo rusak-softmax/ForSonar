@@ -13,7 +13,7 @@ def createDbTasks = [:]
 def runHandlers1cTasks = [:]
 def updateDbTasks = [:]
 def scannerHome
-def scannerHome = tool 'SonarScanner'
+//def scannerHome = tool 'SonarScanner'
 
 
 pipeline {
