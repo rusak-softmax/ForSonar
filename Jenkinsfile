@@ -13,7 +13,7 @@ def createDbTasks = [:]
 def runHandlers1cTasks = [:]
 def updateDbTasks = [:]
 def scannerHome
-//def scannerHome = tool 'SonarScanner'
+def scannerHome = tool 'SonarScanner'
 
 
 pipeline {
@@ -148,7 +148,7 @@ pipeline {
 
 //	stage('Sonarqube') {
 //    environment {
- //       scannerHome = tool 'SonarQubeScanner'
+ //       scannerHome = tool 'SonarScanner'
  //   }
  //   steps {
  //       withSonarQubeEnv('SonarQube') {
@@ -161,22 +161,22 @@ pipeline {
 //}
  
 	///////    node {
- // stage('SCM') {
-//	  steps {
-//		  script {
-//		  scannerHome = tool 'SonarQubeScanner'
-//		  }
-//    checkout scm
-//	  }
-//  }
-//  stage('SonarQube Analysis') {
-//	  steps {
+  stage('SCM') {
+	  steps {
+		  script {
+		  scannerHome = tool 'SonarScanner'
+		  }
+   checkout scm
+	  }
+  }
+  stage('SonarQube Analysis') {
+	  steps {
    ///// //def scannerHome = tool 'SonarScanner';
- //   withSonarQubeEnv('SonarQube') {
-  //    sh "${scannerHome}/bin/sonar-scanner"
-//    }
-//  }
-//  }
+    withSonarQubeEnv('SonarQube') {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
+  }
 ////////}
 	    //
         stage("Тестирование ADD") {
